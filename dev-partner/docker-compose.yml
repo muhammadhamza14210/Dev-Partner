@@ -1,0 +1,15 @@
+services:
+  dev-finder-db:
+    image: postgres:latest
+    restart: always
+    container_name: dev-finder-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: example
+      PGDATA: /data/postgres
+    volumes: 
+      - postgres_data:/var/lib/postgresql/data
+
+volumes: 
+  postgres_data: {}
